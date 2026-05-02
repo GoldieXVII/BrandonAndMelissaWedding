@@ -49,6 +49,25 @@
       .animate-fade-in-up {
         animation: fadeInUp 1.5s ease-out forwards;
       }
+
+      /* Custom Swipe Animation */
+      @keyframes swipe-x {
+        0%, 100% { transform: translateX(0); }
+        50% { transform: translateX(8px); }
+      }
+      .animate-swipe-x {
+        animation: swipe-x 1.5s ease-in-out infinite;
+      }
+      
+      /* Hide scrollbar for Chrome, Safari and Opera */
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      /* Hide scrollbar for IE, Edge and Firefox */
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
     </style>
   </head>
   <body class="bg-pale-bg text-gray-600 font-body overflow-x-hidden">
@@ -182,7 +201,7 @@
           <div class="w-24 h-1 bg-wedding-gold mx-auto"></div>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-6 text-center md:text-left">
+        <div class="grid md:grid-cols-2 gap-8 text-center md:text-left">
           <div
             class="bg-white p-8 rounded-lg shadow-sm border-t-4 border-sage-green"
           >
@@ -194,7 +213,11 @@
               <strong>Location:</strong> Red Ivory, Hartbeespoort
             </p>
             <p class="text-sm italic text-gray-500">
-              Please arrive 30 minutes early for welcome drinks.
+              Please arrive 30 minutes early for welcome drinks, and be seated by 14:45. The ceremony will begin promptly at 15:00.
+            </p>
+            <br>
+            <p class="text-sm italic text-gray-500">
+              If you are late, please proceed directly to the ceremony area and quietly take a seat in the back.
             </p>
           </div>
 
@@ -209,6 +232,10 @@
             <p class="text-sm italic text-gray-500">
               The canepes and pre-wedding is on grass, so block heels are
               recommended for the ladies.
+            </p>
+            <br>
+            <p class="text-sm italic text-gray-500">
+              Please avoid wearing white, or dusty blue
             </p>
           </div>
 
@@ -229,6 +256,92 @@
               celebration (No children under 12).
             </p>
           </div>
+
+          <div
+            class="bg-white p-8 rounded-lg shadow-sm border-t-4 border-sage-green"
+          >
+            <h3 class="font-header text-xl text-dusty-blue mb-4">
+              Gifts
+            </h3>
+            <p class="mb-2"><strong>Honeymoon Fund</strong></p>
+            <p class="text-sm text-gray-600 mb-4">
+              Your presence at our wedding is the greatest gift of all. However,
+              if you wish to honor us with a gift, we have set up a honeymoon
+              fund to help us create unforgettable memories together.
+            </p>
+            <p class="mb-2"><strong>Banking Details</strong></p>
+            <p class="text-sm text-gray-600">
+              Please request banking details from either the bride or groom if you wish to contribute to our honeymoon fund.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<section class="py-16 bg-dusty-blue text-white" id="schedule-section">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center mb-8">
+          <h2 class="font-serif text-4xl text-white mb-4">
+            Schedule
+          </h2>
+          <div class="w-24 h-1 bg-wedding-gold mx-auto mb-6"></div>
+          
+          <!-- Animated Swipe Hint -->
+          <div id="swipe-hint" class="flex items-center justify-center gap-2 text-wedding-gold text-xs uppercase tracking-widest opacity-0 transition-opacity duration-1000">
+             <span>Swipe to explore</span>
+             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 animate-swipe-x">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+             </svg>
+          </div>
+        </div>
+
+        <!-- Horizontal Scroll Container -->
+        <div id="schedule-container" class="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory no-scrollbar px-4 md:px-0 scroll-smooth">
+          
+          <div class="relative bg-white border border-gray-100 rounded-lg text-center hover:shadow-xl transition duration-300 overflow-hidden group flex flex-col shrink-0 w-[85vw] md:w-[350px] snap-center">
+            <div class="bg-sage-green text-white text-xs uppercase font-bold py-1 px-3 absolute top-0 right-0 rounded-bl-lg z-10">
+              14:30
+            </div>
+            <div class="p-8 flex-grow flex flex-col justify-center">
+              <h4 class="font-serif text-2xl text-dusty-blue mb-2">Arrival & Mingling</h4>
+              <p class="text-sm text-gray-500 italic mb-4">Red Ivory Grounds</p>
+              <p class="text-gray-600 text-sm mb-6">Grab a refreshing drink from the bar and find your seats before the ceremony begins.</p>
+            </div>
+          </div>
+
+          <div class="relative bg-white border border-gray-100 rounded-lg text-center hover:shadow-xl transition duration-300 overflow-hidden group flex flex-col shrink-0 w-[85vw] md:w-[350px] snap-center">
+            <div class="bg-dusty-blue text-white text-xs uppercase font-bold py-1 px-3 absolute top-0 right-0 rounded-bl-lg z-10">
+              15:00
+            </div>
+            <div class="p-8 flex-grow flex flex-col justify-center">
+              <h4 class="font-serif text-2xl text-dusty-blue mb-2">The Ceremony</h4>
+              <p class="text-sm text-gray-500 italic mb-4">Red Ivory Chapel</p>
+              <p class="text-gray-600 text-sm mb-6">The moment we say "I do". Please ensure your phones are on silent.</p>
+            </div>
+          </div>
+
+          <div class="relative bg-white border border-gray-100 rounded-lg text-center hover:shadow-xl transition duration-300 overflow-hidden group flex flex-col shrink-0 w-[85vw] md:w-[350px] snap-center">
+            <div class="bg-gray-400 text-white text-xs uppercase font-bold py-1 px-3 absolute top-0 right-0 rounded-bl-lg z-10">
+              16:00
+            </div>
+            <div class="p-8 flex-grow flex flex-col justify-center">
+              <h4 class="font-serif text-2xl text-dusty-blue mb-2">Canapés & Photos</h4>
+              <p class="text-sm text-gray-500 italic mb-4">Lawn Area</p>
+              <p class="text-gray-600 text-sm mb-6">Enjoy light snacks and drinks on the lawn while the bridal party takes photos.</p>
+            </div>
+          </div>
+
+           <div class="relative bg-white border border-gray-100 rounded-lg text-center hover:shadow-xl transition duration-300 overflow-hidden group flex flex-col shrink-0 w-[85vw] md:w-[350px] snap-center">
+             <div class="bg-wedding-gold text-white text-xs uppercase font-bold py-1 px-3 absolute top-0 right-0 rounded-bl-lg z-10">
+               18:00
+             </div>
+             <div class="p-8 flex-grow flex flex-col justify-center">
+               <h4 class="font-serif text-2xl text-dusty-blue mb-2">Reception</h4>
+               <p class="text-sm text-gray-500 italic mb-4">Main Hall</p>
+               <p class="text-gray-600 text-sm mb-6">Join us for dinner, speeches, and dancing the night away!</p>
+             </div>
+         </div>
+
         </div>
       </div>
     </section>
@@ -671,6 +784,46 @@
               submitBtn.textContent = "Confirm Responses";
             });
         });
+      });
+    </script>
+    <script>
+      // --- SCHEDULE PEEK ANIMATION ---
+      document.addEventListener("DOMContentLoaded", function () {
+        const scheduleSection = document.getElementById("schedule-section");
+        const scheduleContainer = document.getElementById("schedule-container");
+        const swipeHint = document.getElementById("swipe-hint");
+
+        if ("IntersectionObserver" in window && scheduleSection) {
+          const scheduleObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                // Fade in the text/arrow hint
+                if (swipeHint) {
+                  swipeHint.classList.remove("opacity-0");
+                  swipeHint.classList.add("opacity-100");
+                }
+                
+                // Do the physical "peek" scroll animation once
+                if (!scheduleContainer.dataset.hasPeeked) {
+                  scheduleContainer.dataset.hasPeeked = "true";
+                  
+                  // Wait a moment after it comes into view, then bump right
+                  setTimeout(() => {
+                    scheduleContainer.scrollBy({ left: 150, behavior: 'smooth' });
+                    
+                    // Immediately snap back left
+                    setTimeout(() => {
+                      scheduleContainer.scrollBy({ left: -150, behavior: 'smooth' });
+                    }, 500); 
+
+                  }, 800);
+                }
+              }
+            });
+          }, { threshold: 0.5 }); // Trigger when 50% of the section is visible
+
+          scheduleObserver.observe(scheduleSection);
+        }
       });
     </script>
   </body>
