@@ -497,6 +497,17 @@
 
           <form id="rsvp-form" class="text-left space-y-8 hidden">
             <div
+              id="rsvp-closed-banner"
+              class="hidden p-4 bg-blue-50 border border-blue-100 rounded text-sm text-blue-800 text-center"
+            >
+              <p>
+                RSVPs are now closed. Here's what we have on file for your
+                party.
+              </p>
+            </div>
+
+            <div
+              id="rsvp-open-banner"
               class="p-4 bg-blue-50 border border-blue-100 rounded text-sm text-blue-800 text-center relative"
             >
               <div class="flex items-center justify-center gap-2">
@@ -656,6 +667,9 @@
       const APPS_SCRIPT_URL =
         "https://script.google.com/macros/s/AKfycbz5h2JJ0NTZD353TBDr5VsWtKKXUDmXy7IVQofnJkRBzZra2caWRquosuouXaFdLzX-/exec";
 
+      // Set to true to stop accepting RSVPs; guests can still see their responses.
+      const RSVP_CLOSED = true;
+
       document.addEventListener("DOMContentLoaded", function () {
         const urlParams = new URLSearchParams(window.location.search);
         const guestId = urlParams.get("guest");
@@ -683,6 +697,51 @@
               form.classList.remove("hidden");
 
               membersList.innerHTML = "";
+
+              if (RSVP_CLOSED) {
+                document
+                  .getElementById("rsvp-open-banner")
+                  .classList.add("hidden");
+                document
+                  .getElementById("rsvp-closed-banner")
+                  .classList.remove("hidden");
+                submitBtn.classList.add("hidden");
+
+                members.forEach((member) => {
+                  const status =
+                    member.attending === "Yes"
+                      ? "Joyfully Accepts"
+                      : member.attending === "No"
+                      ? "Regretfully Declines"
+                      : "No response";
+                  const memberBlock = document.createElement("div");
+                  memberBlock.className =
+                    "bg-gray-50 p-6 rounded-lg border border-gray-100";
+                  memberBlock.innerHTML = `
+                        <h4 class="font-serif text-xl text-dusty-blue mb-4 pb-2 border-b border-gray-200">${member.name}</h4>
+                        <div class="space-y-4">
+                            <div>
+                                <p class="text-xs uppercase tracking-wider font-bold mb-1">Attending?</p>
+                                <p>${status}</p>
+                            </div>
+                            ${
+                              member.dietary
+                                ? `<div>
+                                <p class="text-xs uppercase tracking-wider font-bold mb-1">Dietary Restrictions</p>
+                                <p class="text-sm whitespace-pre-line"></p>
+                            </div>`
+                                : ""
+                            }
+                        </div>
+                    `;
+                  if (member.dietary) {
+                    memberBlock.querySelector(".whitespace-pre-line").textContent =
+                      member.dietary;
+                  }
+                  membersList.appendChild(memberBlock);
+                });
+                return;
+              }
 
               members.forEach((member, index) => {
                 const memberBlock = document.createElement("div");
@@ -739,6 +798,7 @@
 
         form.addEventListener("submit", function (e) {
           e.preventDefault();
+          if (RSVP_CLOSED) return;
 
           submitBtn.disabled = true;
           submitBtn.textContent = "Saving...";
