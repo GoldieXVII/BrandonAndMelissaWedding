@@ -344,6 +344,30 @@
       </div>
     </section>
 
+    <!-- The wedding crossword. Hidden until the wedding day (see the script at
+         the end), so the clues stay a surprise until the sheets are on the tables. -->
+    <section class="py-16 bg-pale-bg hidden" id="crossword-section">
+      <div class="max-w-3xl mx-auto px-4 text-center">
+        <h2 class="font-serif text-4xl text-dusty-blue mb-4">
+          The Wedding Crossword
+        </h2>
+        <div class="w-24 h-1 bg-wedding-gold mx-auto mb-8"></div>
+        <p class="font-serif italic text-2xl text-dusty-blue mb-4">
+          How well do you know us?
+        </p>
+        <p class="text-gray-600 mb-8">
+          Finished the crossword on your table? Take a photo of it and we'll
+          mark it for you.
+        </p>
+        <a
+          href="https://brandon-melissa-crossword.vercel.app/"
+          class="inline-block bg-sage-green text-white py-3 px-10 uppercase tracking-widest font-bold hover:bg-gray-600 transition"
+        >
+          Mark my crossword
+        </a>
+      </div>
+    </section>
+
     <section class="py-16 bg-white">
       <div class="max-w-6xl mx-auto px-4">
         <div class="text-center mb-12">
@@ -883,6 +907,19 @@
           scheduleObserver.observe(scheduleSection);
         }
       });
+    </script>
+    <script>
+      // Show the crossword section on the wedding day and the day after only
+      // (South African time). Add ?crossword to the address to preview it.
+      (function () {
+        const now = Date.now();
+        const opens = Date.parse("2026-12-10T00:00:00+02:00");
+        const closes = Date.parse("2026-12-12T00:00:00+02:00");
+        const preview = new URLSearchParams(location.search).has("crossword");
+        if (preview || (now >= opens && now < closes)) {
+          document.getElementById("crossword-section").classList.remove("hidden");
+        }
+      })();
     </script>
   </body>
 </html>
