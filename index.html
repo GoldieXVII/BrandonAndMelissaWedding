@@ -153,7 +153,7 @@
 
     <section class="bg-white py-16">
       <div class="max-w-4xl mx-auto px-4 text-center">
-        <h2 class="font-serif text-3xl text-dusty-blue mb-4">
+        <h2 class="font-serif text-3xl text-dusty-blue mb-4" id="countdown-title">
           Countdown to the Big Day
         </h2>
         <div class="w-24 h-1 bg-wedding-gold mx-auto mb-8"></div>
@@ -165,30 +165,95 @@
       </div>
     </section>
 
-    <section class="py-16 bg-dusty-blue text-white">
-      <div class="max-w-5xl mx-auto px-4 text-center">
-        <h2 class="font-serif text-4xl mb-4">Our Journey</h2>
-        <div class="w-24 h-1 bg-wedding-gold mx-auto mb-8"></div>
-
-        <div
-          class="relative w-full rounded-xl overflow-hidden shadow-2xl bg-black aspect-video"
-        >
-          <video
-            id="wedding-video"
-            class="w-full h-full object-cover"
-            muted
-            playsinline
-            loop
-            controls
-          >
-            <source src="OurJourney.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+    <section class="py-16 bg-dusty-blue text-white" id="schedule-section">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center mb-8">
+          <h2 class="font-serif text-4xl text-white mb-4">
+            Schedule
+          </h2>
+          <div class="w-24 h-1 bg-wedding-gold mx-auto mb-6"></div>
+          
+          <!-- Animated Swipe Hint -->
+          <div id="swipe-hint" class="flex items-center justify-center gap-2 text-wedding-gold text-xs uppercase tracking-widest opacity-0 transition-opacity duration-1000">
+             <span>Swipe to explore</span>
+             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 animate-swipe-x">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+             </svg>
+          </div>
         </div>
 
-        <p class="text-sm italic text-gray-300 mt-4">
-          Watch a glimpse of our story
+        <!-- Horizontal Scroll Container -->
+        <div id="schedule-container" class="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory no-scrollbar px-4 md:px-0 scroll-smooth">
+          
+          <div class="relative bg-white border border-gray-100 rounded-lg text-center hover:shadow-xl transition duration-300 overflow-hidden group flex flex-col shrink-0 w-[85vw] md:w-[350px] snap-center">
+            <div class="bg-sage-green text-white text-xs uppercase font-bold py-1 px-3 absolute top-0 right-0 rounded-bl-lg z-10">
+              14:30
+            </div>
+            <div class="p-8 flex-grow flex flex-col justify-center">
+              <h4 class="font-serif text-2xl text-dusty-blue mb-2">Arrival & Mingling</h4>
+              <p class="text-sm text-gray-500 italic mb-4">Red Ivory Grounds</p>
+              <p class="text-gray-600 text-sm mb-6">Grab some water and find your seats before the ceremony begins.</p>
+            </div>
+          </div>
+
+          <div class="relative bg-white border border-gray-100 rounded-lg text-center hover:shadow-xl transition duration-300 overflow-hidden group flex flex-col shrink-0 w-[85vw] md:w-[350px] snap-center">
+            <div class="bg-dusty-blue text-white text-xs uppercase font-bold py-1 px-3 absolute top-0 right-0 rounded-bl-lg z-10">
+              15:00
+            </div>
+            <div class="p-8 flex-grow flex flex-col justify-center">
+              <h4 class="font-serif text-2xl text-dusty-blue mb-2">The Ceremony</h4>
+              <p class="text-sm text-gray-500 italic mb-4">Red Ivory Chapel</p>
+              <p class="text-gray-600 text-sm mb-6">The moment we say "I do". Please ensure your phones are on silent.</p>
+            </div>
+          </div>
+
+          <div class="relative bg-white border border-gray-100 rounded-lg text-center hover:shadow-xl transition duration-300 overflow-hidden group flex flex-col shrink-0 w-[85vw] md:w-[350px] snap-center">
+            <div class="bg-gray-400 text-white text-xs uppercase font-bold py-1 px-3 absolute top-0 right-0 rounded-bl-lg z-10">
+              16:00
+            </div>
+            <div class="p-8 flex-grow flex flex-col justify-center">
+              <h4 class="font-serif text-2xl text-dusty-blue mb-2">Canapés & Photos</h4>
+              <p class="text-sm text-gray-500 italic mb-4">Lawn Area</p>
+              <p class="text-gray-600 text-sm mb-6">Enjoy light snacks and drinks on the lawn while the bridal party takes photos.</p>
+            </div>
+          </div>
+
+           <div class="relative bg-white border border-gray-100 rounded-lg text-center hover:shadow-xl transition duration-300 overflow-hidden group flex flex-col shrink-0 w-[85vw] md:w-[350px] snap-center">
+             <div class="bg-wedding-gold text-white text-xs uppercase font-bold py-1 px-3 absolute top-0 right-0 rounded-bl-lg z-10">
+               17:00
+             </div>
+             <div class="p-8 flex-grow flex flex-col justify-center">
+               <h4 class="font-serif text-2xl text-dusty-blue mb-2">Reception</h4>
+               <p class="text-sm text-gray-500 italic mb-4">Main Hall</p>
+               <p class="text-gray-600 text-sm mb-6">Join us for dinner, speeches, and dancing the night away!</p>
+             </div>
+         </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- The wedding crossword. Hidden until the wedding day (see the script at
+         the end), so the clues stay a surprise until the sheets are on the tables. -->
+    <section class="py-16 bg-white hidden" id="crossword-section">
+      <div class="max-w-3xl mx-auto px-4 text-center">
+        <h2 class="font-serif text-4xl text-dusty-blue mb-4">
+          The Wedding Crossword
+        </h2>
+        <div class="w-24 h-1 bg-wedding-gold mx-auto mb-8"></div>
+        <p class="font-serif italic text-2xl text-dusty-blue mb-4">
+          How well do you know us?
         </p>
+        <p class="text-gray-600 mb-8">
+          Finished the crossword on your table? Take a photo of it and we'll
+          mark it for you.
+        </p>
+        <a
+          href="https://brandon-melissa-crossword.vercel.app/"
+          class="inline-block bg-sage-green text-white py-3 px-10 uppercase tracking-widest font-bold hover:bg-gray-600 transition"
+        >
+          Mark my crossword
+        </a>
       </div>
     </section>
 
@@ -276,95 +341,30 @@
       </div>
     </section>
 
-<section class="py-16 bg-dusty-blue text-white" id="schedule-section">
-      <div class="max-w-6xl mx-auto px-4">
-        <div class="text-center mb-8">
-          <h2 class="font-serif text-4xl text-white mb-4">
-            Schedule
-          </h2>
-          <div class="w-24 h-1 bg-wedding-gold mx-auto mb-6"></div>
-          
-          <!-- Animated Swipe Hint -->
-          <div id="swipe-hint" class="flex items-center justify-center gap-2 text-wedding-gold text-xs uppercase tracking-widest opacity-0 transition-opacity duration-1000">
-             <span>Swipe to explore</span>
-             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 animate-swipe-x">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-             </svg>
-          </div>
-        </div>
-
-        <!-- Horizontal Scroll Container -->
-        <div id="schedule-container" class="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory no-scrollbar px-4 md:px-0 scroll-smooth">
-          
-          <div class="relative bg-white border border-gray-100 rounded-lg text-center hover:shadow-xl transition duration-300 overflow-hidden group flex flex-col shrink-0 w-[85vw] md:w-[350px] snap-center">
-            <div class="bg-sage-green text-white text-xs uppercase font-bold py-1 px-3 absolute top-0 right-0 rounded-bl-lg z-10">
-              14:30
-            </div>
-            <div class="p-8 flex-grow flex flex-col justify-center">
-              <h4 class="font-serif text-2xl text-dusty-blue mb-2">Arrival & Mingling</h4>
-              <p class="text-sm text-gray-500 italic mb-4">Red Ivory Grounds</p>
-              <p class="text-gray-600 text-sm mb-6">Grab some water and find your seats before the ceremony begins.</p>
-            </div>
-          </div>
-
-          <div class="relative bg-white border border-gray-100 rounded-lg text-center hover:shadow-xl transition duration-300 overflow-hidden group flex flex-col shrink-0 w-[85vw] md:w-[350px] snap-center">
-            <div class="bg-dusty-blue text-white text-xs uppercase font-bold py-1 px-3 absolute top-0 right-0 rounded-bl-lg z-10">
-              15:00
-            </div>
-            <div class="p-8 flex-grow flex flex-col justify-center">
-              <h4 class="font-serif text-2xl text-dusty-blue mb-2">The Ceremony</h4>
-              <p class="text-sm text-gray-500 italic mb-4">Red Ivory Chapel</p>
-              <p class="text-gray-600 text-sm mb-6">The moment we say "I do". Please ensure your phones are on silent.</p>
-            </div>
-          </div>
-
-          <div class="relative bg-white border border-gray-100 rounded-lg text-center hover:shadow-xl transition duration-300 overflow-hidden group flex flex-col shrink-0 w-[85vw] md:w-[350px] snap-center">
-            <div class="bg-gray-400 text-white text-xs uppercase font-bold py-1 px-3 absolute top-0 right-0 rounded-bl-lg z-10">
-              16:00
-            </div>
-            <div class="p-8 flex-grow flex flex-col justify-center">
-              <h4 class="font-serif text-2xl text-dusty-blue mb-2">Canapés & Photos</h4>
-              <p class="text-sm text-gray-500 italic mb-4">Lawn Area</p>
-              <p class="text-gray-600 text-sm mb-6">Enjoy light snacks and drinks on the lawn while the bridal party takes photos.</p>
-            </div>
-          </div>
-
-           <div class="relative bg-white border border-gray-100 rounded-lg text-center hover:shadow-xl transition duration-300 overflow-hidden group flex flex-col shrink-0 w-[85vw] md:w-[350px] snap-center">
-             <div class="bg-wedding-gold text-white text-xs uppercase font-bold py-1 px-3 absolute top-0 right-0 rounded-bl-lg z-10">
-               18:00
-             </div>
-             <div class="p-8 flex-grow flex flex-col justify-center">
-               <h4 class="font-serif text-2xl text-dusty-blue mb-2">Reception</h4>
-               <p class="text-sm text-gray-500 italic mb-4">Main Hall</p>
-               <p class="text-gray-600 text-sm mb-6">Join us for dinner, speeches, and dancing the night away!</p>
-             </div>
-         </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- The wedding crossword. Hidden until the wedding day (see the script at
-         the end), so the clues stay a surprise until the sheets are on the tables. -->
-    <section class="py-16 bg-pale-bg hidden" id="crossword-section">
-      <div class="max-w-3xl mx-auto px-4 text-center">
-        <h2 class="font-serif text-4xl text-dusty-blue mb-4">
-          The Wedding Crossword
-        </h2>
+    <section class="py-16 bg-dusty-blue text-white">
+      <div class="max-w-5xl mx-auto px-4 text-center">
+        <h2 class="font-serif text-4xl mb-4">Our Journey</h2>
         <div class="w-24 h-1 bg-wedding-gold mx-auto mb-8"></div>
-        <p class="font-serif italic text-2xl text-dusty-blue mb-4">
-          How well do you know us?
-        </p>
-        <p class="text-gray-600 mb-8">
-          Finished the crossword on your table? Take a photo of it and we'll
-          mark it for you.
-        </p>
-        <a
-          href="https://brandon-melissa-crossword.vercel.app/"
-          class="inline-block bg-sage-green text-white py-3 px-10 uppercase tracking-widest font-bold hover:bg-gray-600 transition"
+
+        <div
+          class="relative w-full rounded-xl overflow-hidden shadow-2xl bg-black aspect-video"
         >
-          Mark my crossword
-        </a>
+          <video
+            id="wedding-video"
+            class="w-full h-full object-cover"
+            muted
+            playsinline
+            loop
+            controls
+          >
+            <source src="OurJourney.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        <p class="text-sm italic text-gray-300 mt-4">
+          Watch a glimpse of our story
+        </p>
       </div>
     </section>
 
@@ -614,41 +614,129 @@
     </footer>
 
     <script>
-      const weddingDate = new Date("December 10, 2026 15:00:00").getTime();
+      // Before the wedding: a countdown to the ceremony.
+      // On the day: what's happening now and next, read from the Schedule cards.
+      // Afterwards: a thank-you. All times are South African time, whatever time
+      // zone a guest's phone is set to.
+      // Preview any moment by adding ?time=2026-12-10T16:30 to the address.
+      const SAST = "+02:00";
+      const WEDDING_DAY = "2026-12-10";
+      const DAY_START = Date.parse(`${WEDDING_DAY}T00:00:00${SAST}`);
+      const DAY_END = Date.parse(`2026-12-11T00:00:00${SAST}`);
 
-      function updateCountdown() {
-        const now = new Date().getTime();
-        const distance = weddingDate - now;
+      const previewParam = new URLSearchParams(location.search).get("time");
+      const previewOffset = previewParam ? Date.parse(`${previewParam}${SAST}`) - Date.now() : 0;
+      window.weddingNow = () => Date.now() + (Number.isFinite(previewOffset) ? previewOffset : 0);
 
-        if (distance < 0) {
-          document.getElementById("countdown").innerHTML = "We are married!";
-          return;
-        }
+      const esc = (text) =>
+        text.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+      const clock = new Intl.DateTimeFormat("en-GB", {
+        hour: "2-digit",
+        minute: "2-digit",
+        timeZone: "Africa/Johannesburg",
+      });
 
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor(
-          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-        );
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      function scheduleItems() {
+        return [...document.querySelectorAll("#schedule-container > div")].map((card) => {
+          const time = card.querySelector("div").textContent.trim();
+          return {
+            time,
+            start: Date.parse(`${WEDDING_DAY}T${time}:00${SAST}`),
+            title: card.querySelector("h4").textContent.trim(),
+            place: card.querySelector("p.italic").textContent.trim(),
+          };
+        });
+      }
 
+      function countdownBoxes(distance) {
         const timeUnits = [
-          { value: days, label: "Days" },
-          { value: hours, label: "Hours" },
-          { value: minutes, label: "Minutes" },
-          { value: seconds, label: "Seconds" },
+          { value: Math.floor(distance / 86400000), label: "Days" },
+          { value: Math.floor((distance % 86400000) / 3600000), label: "Hours" },
+          { value: Math.floor((distance % 3600000) / 60000), label: "Minutes" },
+          { value: Math.floor((distance % 60000) / 1000), label: "Seconds" },
         ];
-
-        let html = "";
-        timeUnits.forEach((unit) => {
-          html += `
+        return timeUnits
+          .map(
+            (unit) => `
                     <div class="flex flex-col items-center bg-pale-bg p-4 rounded-lg w-24 shadow-sm border border-gray-100">
                         <span class="text-3xl font-serif text-dusty-blue font-bold">${unit.value}</span>
                         <span class="text-xs uppercase tracking-wider text-gray-500 mt-1">${unit.label}</span>
-                    </div>
-                `;
-        });
+                    </div>`
+          )
+          .join("");
+      }
 
+      function weddingDayPanel(now, items, ceremony) {
+        const current = items.filter((item) => item.start <= now).pop();
+        const next = items.find((item) => item.start > now);
+        const title = (current?.title || "").toLowerCase();
+
+        let script = "It's finally here!";
+        if (title.includes("ceremony")) script = "It's time!";
+        else if (title.includes("reception")) script = "Let's celebrate!";
+        else if (current && ceremony && current.start > ceremony.start) script = "Just married!";
+        else if (current) script = "Almost time!";
+
+        let html = `<div class="w-full max-w-xl mx-auto">
+          <p class="font-script text-5xl md:text-6xl text-wedding-gold transform -rotate-3 mb-8">${script}</p>`;
+
+        if (!current && ceremony) {
+          const minutes = Math.max(1, Math.ceil((ceremony.start - now) / 60000));
+          const left = minutes >= 60 ? `${Math.floor(minutes / 60)} h ${minutes % 60} min` : `${minutes} min`;
+          html += `
+          <p class="text-gray-600 mb-4">The ceremony starts at <strong>${esc(ceremony.time)}</strong> in the ${esc(ceremony.place)}.
+            Please be seated by ${clock.format(ceremony.start - 15 * 60000)}.</p>
+          <p class="uppercase tracking-widest text-xs text-gray-500 font-header">Ceremony in ${left}</p>`;
+        } else if (current) {
+          html += `
+          <div class="bg-pale-bg rounded-lg shadow-sm border-t-4 border-sage-green p-6">
+            <p class="uppercase tracking-widest text-xs text-gray-500 font-header mb-2">Happening now</p>
+            <p class="font-serif text-3xl text-dusty-blue">${esc(current.title)}</p>
+            <p class="text-sm italic text-gray-500 mt-1">${esc(current.place)} · from ${esc(current.time)}</p>
+            ${title.includes("ceremony") ? '<p class="text-sm text-gray-600 mt-3">Please keep your phones on silent.</p>' : ""}
+          </div>`;
+          if (next) {
+            html += `
+          <p class="mt-5 text-sm text-gray-600">
+            <span class="uppercase tracking-widest text-xs text-gray-500 font-header">Up next</span>
+            · ${esc(next.time)} ${esc(next.title)}, ${esc(next.place)}</p>`;
+          }
+          // The crossword section is always shown on the wedding day.
+          if (title.includes("reception")) {
+            html += `
+          <a href="#crossword-section" class="inline-block mt-8 border-t border-b border-wedding-gold py-2 px-5 uppercase tracking-widest text-xs text-dusty-blue hover:text-wedding-gold transition">
+            Finished the wedding crossword? Mark it here ↓</a>`;
+          }
+        }
+        return html + "</div>";
+      }
+
+      let lastRender = "";
+      function updateCountdown() {
+        const now = window.weddingNow();
+        const items = scheduleItems();
+        const ceremony = items.find((item) => /ceremony/i.test(item.title));
+        const ceremonyStart = ceremony ? ceremony.start : Date.parse(`${WEDDING_DAY}T15:00:00${SAST}`);
+
+        let heading;
+        let html;
+        if (now < DAY_START) {
+          heading = "Countdown to the Big Day";
+          html = countdownBoxes(ceremonyStart - now);
+        } else if (now < DAY_END) {
+          heading = "Today's the Day!";
+          html = weddingDayPanel(now, items, ceremony);
+        } else {
+          heading = "We're Married!";
+          html = `<div class="w-full">
+            <p class="font-script text-5xl md:text-6xl text-wedding-gold transform -rotate-3 mb-6">Thank you!</p>
+            <p class="text-gray-600">Thank you for celebrating with us on 10 December 2026.</p>
+          </div>`;
+        }
+        // Only touch the page when something has changed, not every second.
+        if (heading + html === lastRender) return;
+        lastRender = heading + html;
+        document.getElementById("countdown-title").textContent = heading;
         document.getElementById("countdown").innerHTML = html;
       }
 
@@ -910,9 +998,10 @@
     </script>
     <script>
       // Show the crossword section on the wedding day and the day after only
-      // (South African time). Add ?crossword to the address to preview it.
+      // (South African time). Add ?crossword to the address to preview it, or
+      // ?time=2026-12-10T18:00 to see the whole page as it will be then.
       (function () {
-        const now = Date.now();
+        const now = window.weddingNow ? window.weddingNow() : Date.now();
         const opens = Date.parse("2026-12-10T00:00:00+02:00");
         const closes = Date.parse("2026-12-12T00:00:00+02:00");
         const preview = new URLSearchParams(location.search).has("crossword");
