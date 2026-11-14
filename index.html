@@ -165,95 +165,30 @@
       </div>
     </section>
 
-    <section class="py-16 bg-dusty-blue text-white" id="schedule-section">
-      <div class="max-w-6xl mx-auto px-4">
-        <div class="text-center mb-8">
-          <h2 class="font-serif text-4xl text-white mb-4">
-            Schedule
-          </h2>
-          <div class="w-24 h-1 bg-wedding-gold mx-auto mb-6"></div>
-          
-          <!-- Animated Swipe Hint -->
-          <div id="swipe-hint" class="flex items-center justify-center gap-2 text-wedding-gold text-xs uppercase tracking-widest opacity-0 transition-opacity duration-1000">
-             <span>Swipe to explore</span>
-             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 animate-swipe-x">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-             </svg>
-          </div>
-        </div>
-
-        <!-- Horizontal Scroll Container -->
-        <div id="schedule-container" class="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory no-scrollbar px-4 md:px-0 scroll-smooth">
-          
-          <div class="relative bg-white border border-gray-100 rounded-lg text-center hover:shadow-xl transition duration-300 overflow-hidden group flex flex-col shrink-0 w-[85vw] md:w-[350px] snap-center">
-            <div class="bg-sage-green text-white text-xs uppercase font-bold py-1 px-3 absolute top-0 right-0 rounded-bl-lg z-10">
-              14:30
-            </div>
-            <div class="p-8 flex-grow flex flex-col justify-center">
-              <h4 class="font-serif text-2xl text-dusty-blue mb-2">Arrival & Mingling</h4>
-              <p class="text-sm text-gray-500 italic mb-4">Red Ivory Grounds</p>
-              <p class="text-gray-600 text-sm mb-6">Grab some water and find your seats before the ceremony begins.</p>
-            </div>
-          </div>
-
-          <div class="relative bg-white border border-gray-100 rounded-lg text-center hover:shadow-xl transition duration-300 overflow-hidden group flex flex-col shrink-0 w-[85vw] md:w-[350px] snap-center">
-            <div class="bg-dusty-blue text-white text-xs uppercase font-bold py-1 px-3 absolute top-0 right-0 rounded-bl-lg z-10">
-              15:00
-            </div>
-            <div class="p-8 flex-grow flex flex-col justify-center">
-              <h4 class="font-serif text-2xl text-dusty-blue mb-2">The Ceremony</h4>
-              <p class="text-sm text-gray-500 italic mb-4">Red Ivory Chapel</p>
-              <p class="text-gray-600 text-sm mb-6">The moment we say "I do". Please ensure your phones are on silent.</p>
-            </div>
-          </div>
-
-          <div class="relative bg-white border border-gray-100 rounded-lg text-center hover:shadow-xl transition duration-300 overflow-hidden group flex flex-col shrink-0 w-[85vw] md:w-[350px] snap-center">
-            <div class="bg-gray-400 text-white text-xs uppercase font-bold py-1 px-3 absolute top-0 right-0 rounded-bl-lg z-10">
-              16:00
-            </div>
-            <div class="p-8 flex-grow flex flex-col justify-center">
-              <h4 class="font-serif text-2xl text-dusty-blue mb-2">Canapés & Photos</h4>
-              <p class="text-sm text-gray-500 italic mb-4">Lawn Area</p>
-              <p class="text-gray-600 text-sm mb-6">Enjoy light snacks and drinks on the lawn while the bridal party takes photos.</p>
-            </div>
-          </div>
-
-           <div class="relative bg-white border border-gray-100 rounded-lg text-center hover:shadow-xl transition duration-300 overflow-hidden group flex flex-col shrink-0 w-[85vw] md:w-[350px] snap-center">
-             <div class="bg-wedding-gold text-white text-xs uppercase font-bold py-1 px-3 absolute top-0 right-0 rounded-bl-lg z-10">
-               17:00
-             </div>
-             <div class="p-8 flex-grow flex flex-col justify-center">
-               <h4 class="font-serif text-2xl text-dusty-blue mb-2">Reception</h4>
-               <p class="text-sm text-gray-500 italic mb-4">Main Hall</p>
-               <p class="text-gray-600 text-sm mb-6">Join us for dinner, speeches, and dancing the night away!</p>
-             </div>
-         </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- The wedding crossword. Hidden until the wedding day (see the script at
-         the end), so the clues stay a surprise until the sheets are on the tables. -->
-    <section class="py-16 bg-white hidden" id="crossword-section">
-      <div class="max-w-3xl mx-auto px-4 text-center">
-        <h2 class="font-serif text-4xl text-dusty-blue mb-4">
-          The Wedding Crossword
-        </h2>
+    <section class="py-16 bg-dusty-blue text-white">
+      <div class="max-w-5xl mx-auto px-4 text-center">
+        <h2 class="font-serif text-4xl mb-4">Our Journey</h2>
         <div class="w-24 h-1 bg-wedding-gold mx-auto mb-8"></div>
-        <p class="font-serif italic text-2xl text-dusty-blue mb-4">
-          How well do you know us?
-        </p>
-        <p class="text-gray-600 mb-8">
-          Finished the crossword on your table? Take a photo of it and we'll
-          mark it for you.
-        </p>
-        <a
-          href="https://brandon-melissa-crossword.vercel.app/"
-          class="inline-block bg-sage-green text-white py-3 px-10 uppercase tracking-widest font-bold hover:bg-gray-600 transition"
+
+        <div
+          class="relative w-full rounded-xl overflow-hidden shadow-2xl bg-black aspect-video"
         >
-          Mark my crossword
-        </a>
+          <video
+            id="wedding-video"
+            class="w-full h-full object-cover"
+            muted
+            playsinline
+            loop
+            controls
+          >
+            <source src="OurJourney.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        <p class="text-sm italic text-gray-300 mt-4">
+          Watch a glimpse of our story
+        </p>
       </div>
     </section>
 
@@ -341,30 +276,95 @@
       </div>
     </section>
 
-    <section class="py-16 bg-dusty-blue text-white">
-      <div class="max-w-5xl mx-auto px-4 text-center">
-        <h2 class="font-serif text-4xl mb-4">Our Journey</h2>
-        <div class="w-24 h-1 bg-wedding-gold mx-auto mb-8"></div>
-
-        <div
-          class="relative w-full rounded-xl overflow-hidden shadow-2xl bg-black aspect-video"
-        >
-          <video
-            id="wedding-video"
-            class="w-full h-full object-cover"
-            muted
-            playsinline
-            loop
-            controls
-          >
-            <source src="OurJourney.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+<section class="py-16 bg-dusty-blue text-white" id="schedule-section">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center mb-8">
+          <h2 class="font-serif text-4xl text-white mb-4">
+            Schedule
+          </h2>
+          <div class="w-24 h-1 bg-wedding-gold mx-auto mb-6"></div>
+          
+          <!-- Animated Swipe Hint -->
+          <div id="swipe-hint" class="flex items-center justify-center gap-2 text-wedding-gold text-xs uppercase tracking-widest opacity-0 transition-opacity duration-1000">
+             <span>Swipe to explore</span>
+             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 animate-swipe-x">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+             </svg>
+          </div>
         </div>
 
-        <p class="text-sm italic text-gray-300 mt-4">
-          Watch a glimpse of our story
+        <!-- Horizontal Scroll Container -->
+        <div id="schedule-container" class="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory no-scrollbar px-4 md:px-0 scroll-smooth">
+          
+          <div class="relative bg-white border border-gray-100 rounded-lg text-center hover:shadow-xl transition duration-300 overflow-hidden group flex flex-col shrink-0 w-[85vw] md:w-[350px] snap-center">
+            <div class="bg-sage-green text-white text-xs uppercase font-bold py-1 px-3 absolute top-0 right-0 rounded-bl-lg z-10">
+              14:30
+            </div>
+            <div class="p-8 flex-grow flex flex-col justify-center">
+              <h4 class="font-serif text-2xl text-dusty-blue mb-2">Arrival & Mingling</h4>
+              <p class="text-sm text-gray-500 italic mb-4">Red Ivory Grounds</p>
+              <p class="text-gray-600 text-sm mb-6">Grab some water and find your seats before the ceremony begins.</p>
+            </div>
+          </div>
+
+          <div class="relative bg-white border border-gray-100 rounded-lg text-center hover:shadow-xl transition duration-300 overflow-hidden group flex flex-col shrink-0 w-[85vw] md:w-[350px] snap-center">
+            <div class="bg-dusty-blue text-white text-xs uppercase font-bold py-1 px-3 absolute top-0 right-0 rounded-bl-lg z-10">
+              15:00
+            </div>
+            <div class="p-8 flex-grow flex flex-col justify-center">
+              <h4 class="font-serif text-2xl text-dusty-blue mb-2">The Ceremony</h4>
+              <p class="text-sm text-gray-500 italic mb-4">Red Ivory Chapel</p>
+              <p class="text-gray-600 text-sm mb-6">The moment we say "I do". Please ensure your phones are on silent.</p>
+            </div>
+          </div>
+
+          <div class="relative bg-white border border-gray-100 rounded-lg text-center hover:shadow-xl transition duration-300 overflow-hidden group flex flex-col shrink-0 w-[85vw] md:w-[350px] snap-center">
+            <div class="bg-gray-400 text-white text-xs uppercase font-bold py-1 px-3 absolute top-0 right-0 rounded-bl-lg z-10">
+              16:00
+            </div>
+            <div class="p-8 flex-grow flex flex-col justify-center">
+              <h4 class="font-serif text-2xl text-dusty-blue mb-2">Canapés & Photos</h4>
+              <p class="text-sm text-gray-500 italic mb-4">Lawn Area</p>
+              <p class="text-gray-600 text-sm mb-6">Enjoy light snacks and drinks on the lawn while the bridal party takes photos.</p>
+            </div>
+          </div>
+
+           <div class="relative bg-white border border-gray-100 rounded-lg text-center hover:shadow-xl transition duration-300 overflow-hidden group flex flex-col shrink-0 w-[85vw] md:w-[350px] snap-center">
+             <div class="bg-wedding-gold text-white text-xs uppercase font-bold py-1 px-3 absolute top-0 right-0 rounded-bl-lg z-10">
+               17:00
+             </div>
+             <div class="p-8 flex-grow flex flex-col justify-center">
+               <h4 class="font-serif text-2xl text-dusty-blue mb-2">Reception</h4>
+               <p class="text-sm text-gray-500 italic mb-4">Main Hall</p>
+               <p class="text-gray-600 text-sm mb-6">Join us for dinner, speeches, and dancing the night away!</p>
+             </div>
+         </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- The wedding crossword. Hidden until the wedding day (see the script at
+         the end), so the clues stay a surprise until the sheets are on the tables. -->
+    <section class="py-16 bg-pale-bg hidden" id="crossword-section">
+      <div class="max-w-3xl mx-auto px-4 text-center">
+        <h2 class="font-serif text-4xl text-dusty-blue mb-4">
+          The Wedding Crossword
+        </h2>
+        <div class="w-24 h-1 bg-wedding-gold mx-auto mb-8"></div>
+        <p class="font-serif italic text-2xl text-dusty-blue mb-4">
+          How well do you know us?
         </p>
+        <p class="text-gray-600 mb-8">
+          Finished the crossword on your table? Take a photo of it and we'll
+          mark it for you.
+        </p>
+        <a
+          href="https://brandon-melissa-crossword.vercel.app/"
+          class="inline-block bg-sage-green text-white py-3 px-10 uppercase tracking-widest font-bold hover:bg-gray-600 transition"
+        >
+          Mark my crossword
+        </a>
       </div>
     </section>
 
@@ -742,6 +742,19 @@
 
       setInterval(updateCountdown, 1000);
       updateCountdown();
+
+      // On the wedding day only, bring the Schedule and the crossword up to just
+      // below this section, so they're the first things guests see. The rest of
+      // the time the page keeps its usual order.
+      if (window.weddingNow() >= DAY_START && window.weddingNow() < DAY_END) {
+        document
+          .getElementById("countdown")
+          .closest("section")
+          .after(
+            document.getElementById("schedule-section"),
+            document.getElementById("crossword-section")
+          );
+      }
 
       const urlParams = new URLSearchParams(window.location.search);
       const guestId = urlParams.get("guest");
